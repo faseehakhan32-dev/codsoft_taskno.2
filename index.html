@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A sleek, modern calculator with basic arithmetic operations — addition, subtraction, multiplication, and division.">
+    <title>Calculator — Modern Arithmetic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Ambient glow blobs -->
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+        <div class="glow glow-3"></div>
+
+        <div class="calculator" id="calculator">
+            <!-- Display -->
+            <div class="display" id="display">
+                <div class="display-expression" id="display-expression"></div>
+                <div class="display-result" id="display-result">0</div>
+            </div>
+
+            <!-- Input Section -->
+            <div class="input-section" id="input-section">
+                <h2 class="section-title">Enter Values</h2>
+
+                <div class="input-group">
+                    <label for="num1" class="input-label">First Number</label>
+                    <input type="number" id="num1" class="num-input" placeholder="e.g. 42" autofocus>
+                </div>
+
+                <div class="input-group">
+                    <label for="num2" class="input-label">Second Number</label>
+                    <input type="number" id="num2" class="num-input" placeholder="e.g. 7">
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">Operation</label>
+                    <div class="operation-grid" id="operation-grid">
+                        <button class="op-btn" data-op="+" id="btn-add">
+                            <span class="op-icon">+</span>
+                            <span class="op-name">Add</span>
+                        </button>
+                        <button class="op-btn" data-op="-" id="btn-subtract">
+                            <span class="op-icon">−</span>
+                            <span class="op-name">Subtract</span>
+                        </button>
+                        <button class="op-btn" data-op="*" id="btn-multiply">
+                            <span class="op-icon">×</span>
+                            <span class="op-name">Multiply</span>
+                        </button>
+                        <button class="op-btn" data-op="/" id="btn-divide">
+                            <span class="op-icon">÷</span>
+                            <span class="op-name">Divide</span>
+                        </button>
+                    </div>
+                </div>
+
+                <button class="calculate-btn" id="btn-calculate">
+                    <span class="btn-text">Calculate</span>
+                    <span class="btn-icon">⏎</span>
+                </button>
+            </div>
+
+            <!-- Result Section (hidden by default, shown after calculation) -->
+            <div class="result-section hidden" id="result-section">
+                <div class="result-card" id="result-card">
+                    <div class="result-expression" id="result-expression"></div>
+                    <div class="result-equals">=</div>
+                    <div class="result-value" id="result-value"></div>
+                </div>
+                <button class="new-calc-btn" id="btn-new-calc">
+                    <span>New Calculation</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+                </button>
+            </div>
+
+            <!-- History Panel -->
+            <div class="history-panel" id="history-panel">
+                <div class="history-header">
+                    <h3 class="history-title">History</h3>
+                    <button class="history-clear" id="btn-clear-history" title="Clear history">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                    </button>
+                </div>
+                <div class="history-list" id="history-list">
+                    <div class="history-empty" id="history-empty">No calculations yet</div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Built with precision & style</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
